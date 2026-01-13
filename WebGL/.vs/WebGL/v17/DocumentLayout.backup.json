@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|c:\\users\\therkelsen\\source\\repos\\webgl\\webgl\\wwwroot\\js\\init-cube-buffers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|solutionrelative:webgl\\wwwroot\\js\\init-cube-buffers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|c:\\users\\therkelsen\\source\\repos\\webgl\\webgl\\wwwroot\\js\\draw-scene.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|solutionrelative:webgl\\wwwroot\\js\\draw-scene.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|c:\\users\\therkelsen\\source\\repos\\webgl\\webgl\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|solutionrelative:webgl\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|c:\\users\\therkelsen\\source\\repos\\webgl\\webgl\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|solutionrelative:webgl\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|c:\\users\\therkelsen\\source\\repos\\webgl\\webgl\\wwwroot\\js\\init-circle-buffers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6D9B019B-A2E7-4591-A3A8-3A2F84911693}|WebGL\\WebGL.csproj|solutionrelative:webgl\\wwwroot\\js\\init-circle-buffers.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "init-cube-buffers.js",
+              "DocumentMoniker": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\init-cube-buffers.js",
+              "RelativeDocumentMoniker": "WebGL\\wwwroot\\js\\init-cube-buffers.js",
+              "ToolTip": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\init-cube-buffers.js",
+              "RelativeToolTip": "WebGL\\wwwroot\\js\\init-cube-buffers.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAQwCcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-06T20:13:18.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "WebGL\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "WebGL\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-05T15:40:33.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "draw-scene.js",
+              "DocumentMoniker": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\draw-scene.js",
+              "RelativeDocumentMoniker": "WebGL\\wwwroot\\js\\draw-scene.js",
+              "ToolTip": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\draw-scene.js",
+              "RelativeToolTip": "WebGL\\wwwroot\\js\\draw-scene.js",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAQwFcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-05T15:45:14.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "init-circle-buffers.js",
+              "DocumentMoniker": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\init-circle-buffers.js",
+              "RelativeDocumentMoniker": "WebGL\\wwwroot\\js\\init-circle-buffers.js",
+              "ToolTip": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\wwwroot\\js\\init-circle-buffers.js",
+              "RelativeToolTip": "WebGL\\wwwroot\\js\\init-circle-buffers.js",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-05T15:43:50.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebGL\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Therkelsen\\source\\repos\\WebGL\\WebGL\\Pages\\Index.cshtml",
+              "RelativeToolTip": "WebGL\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-05T15:39:39.547Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
