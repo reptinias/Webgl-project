@@ -3,6 +3,8 @@
 "use strict";
 
 async function main() {
+    const start = Date.now();
+    let ms = 0;
     const canvas = document.querySelector("#gl-canvas");
     const gl = canvas.getContext("webgl");
     if (!gl) {
@@ -56,8 +58,11 @@ async function main() {
     const ModelData = await fetch('/Models/ny_clean_up2.obj');
     const text = await ModelData.text();
     const obj = parseOBJ(text);
-    const texture = loadTexture(gl, "/Models/none.jpg");
-    console.log(texture)
+    ms = Date.now() - start;
+    console.log(`Loaded model: ${ms / 1000}`);
+    const texture = loadTexture(gl, "/Models/tex.jpg");
+    ms = Date.now() - start;
+    console.log(`Loaded texture: ${ms / 1000}`);
 
     const parts = obj.geometries.map(({ data }) => {
         if (data.color) {
@@ -79,7 +84,7 @@ async function main() {
 
         const vertexCount = data.position.length / 3;
         if (data.texcoord.length !== vertexCount * 2) {
-            const fixed = new Array(vertexCount * 2).fill(0);
+            const fixed = new Array(vertexCount * 2).fill(0.5);
             for (let i = 0; i < data.texcoord.length; i++) {
                 fixed[i] = data.texcoord[i];
             }
@@ -96,15 +101,19 @@ async function main() {
         };
     });    
 
+    ms = Date.now() - start;
+    console.log(`Buffers created: ${ms / 1000}`);
+
     const cameraTarget = [0, 0, 0];
-    const cameraPosition = [0, 0.5, 3];
+    const cameraPosition = [0, 2, 10];
     const zNear = 0.1;
     const zFar = 500;
 
     function degToRad(deg) {
         return deg * Math.PI / 180;
     }
-
+    ms = Date.now() - start;
+    console.log(`before first render: ${ms / 1000}`);
     function render(time) {
         time *= 0.001;  // convert to seconds
 
@@ -136,7 +145,10 @@ async function main() {
         // calls gl.uniform
         webglUtils.setUniforms(meshProgramInfo, sharedUniforms);
 
+        // Hvis modellen skal rotere
         const u_world = m4.yRotation(time);
+        // Hvis modellen skal være stationær
+        const u_world = m4.identity();
         for (const {bufferInfo, material} of parts) {
             // calls gl.bindBuffer, gl.enableVertexAttribArray, gl.vertexAttribPointer
             webglUtils.setBuffersAndAttributes(gl, meshProgramInfo, bufferInfo);
@@ -155,6 +167,8 @@ async function main() {
         requestAnimationFrame(render);
     }
     requestAnimationFrame(render);
+    ms = Date.now() - start;
+    console.log(`End of main: ${ms / 1000}`);
 }
 
 // helper function to clean the obj file
@@ -323,7 +337,6 @@ function loadTexture(gl, url) {
     const tex = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, tex);
 
-    // temporary 1x1 pixel
     gl.texImage2D(
         gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0,
         gl.RGBA, gl.UNSIGNED_BYTE,
@@ -334,8 +347,21 @@ function loadTexture(gl, url) {
     img.src = url;
     img.onload = () => {
         gl.bindTexture(gl.TEXTURE_2D, tex);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+
+        gl.texImage2D(
+            gl.TEXTURE_2D,
+            0,
+            gl.RGBA,
+            gl.RGBA,
+            gl.UNSIGNED_BYTE,
+            img
+        );
+
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     };
 
     return tex;
