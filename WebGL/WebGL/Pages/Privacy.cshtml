@@ -5,6 +5,98 @@
 }
 
 <!doctype html>
+<style>
+    .d-pad {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin: auto auto 2rem auto;
+        display: block;
+    }
+
+    .o-pad {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .d-pad button {
+        border: none;
+        font-size: 2rem;
+        display: block;
+        position: absolute;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        width: 33%;
+        aspect-ratio: 1/1;
+        line-height: 40%;
+        text-align: center;
+    }
+
+    .d-pad .left {
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+
+    .d-pad .right {
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+
+    .d-pad .up {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .d-pad .down {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .o-pad button {
+        border: none;
+        font-size: 2rem;
+        display: block;
+        position: absolute;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        width: 50%;
+        height: 50%;
+        aspect-ratio: 1/1;
+        line-height: 40%;
+        text-align: center;
+    }
+
+    .o-pad .left {
+        top: 50%;
+        right: 50%;
+        transform: translate(-20%, -50%) rotate(45deg);
+    }
+
+    .o-pad .right {
+        top: 50%;
+        left: 50%;
+        transform: translate(20%, -50%) rotate(45deg);
+    }
+
+    .o-pad .up {
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, -20%) rotate(45deg);
+    }
+
+    .o-pad .down {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%) rotate(45deg);
+    }
+</style>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,8 +110,29 @@
 
 <body>
     <h1>Render from obj file</h1>
-    <canvas id="gl-canvas" width="1200" height="850"></canvas>
-    <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
-    <script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+    <div style="display:flex; width:1400px;">
+        <div style="width:200px; display:inline-block;">
+            <strong>Camera Controls:</strong>
+            <div class="d-pad">
+                <button onclick="moveUp()" class="up">&#8593;</button>
+                <button onclick="moveLeft()" class="left">&#8592;</button>
+                <button onclick="moveRight()" class="right">&#8594;</button>
+                <button onclick="moveDown()" class="down">&#8595;</button>
+            </div>
+
+            <div class="o-pad">
+                <button class="up">&#8631;</button>
+                <button class="left">&#8634;</button>
+                <button class="right">&#8635;</button>
+                <button class="down">&#8630;</button>
+            </div>
+        </div>
+        <div style="display:block; margin: 0 0 0 auto;">
+            <canvas id="gl-canvas" width="1200" height="850" style="border: 1px solid black"></canvas>
+            <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+            <script src="https://webglfundamentals.org/webgl/resources/m4.js"></script>
+        </div>
+    </div>
+    <script src="/js/camera-controls.js"></script>
 </body>
 </html>

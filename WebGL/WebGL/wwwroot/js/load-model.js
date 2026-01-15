@@ -58,11 +58,7 @@ async function main() {
     const ModelData = await fetch('/Models/ny_clean_up2.obj');
     const text = await ModelData.text();
     const obj = parseOBJ(text);
-    ms = Date.now() - start;
-    console.log(`Loaded model: ${ms / 1000}`);
     const texture = loadTexture(gl, "/Models/tex.jpg");
-    ms = Date.now() - start;
-    console.log(`Loaded texture: ${ms / 1000}`);
 
     const parts = obj.geometries.map(({ data }) => {
         if (data.color) {
@@ -100,9 +96,6 @@ async function main() {
             bufferInfo,
         };
     });    
-
-    ms = Date.now() - start;
-    console.log(`Buffers created: ${ms / 1000}`);
 
     const cameraTarget = [0, 0, 0];
     const cameraPosition = [0, 2, 10];
@@ -148,7 +141,7 @@ async function main() {
         // Hvis modellen skal rotere
         const u_world = m4.yRotation(time);
         // Hvis modellen skal være stationær
-        const u_world = m4.identity();
+        //const u_world = m4.identity();
         for (const {bufferInfo, material} of parts) {
             // calls gl.bindBuffer, gl.enableVertexAttribArray, gl.vertexAttribPointer
             webglUtils.setBuffersAndAttributes(gl, meshProgramInfo, bufferInfo);
